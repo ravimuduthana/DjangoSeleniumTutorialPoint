@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-wbkg$u-gb+uo$lp)76pj)e7eh&ys^3ptp^bnw5@tbz8#$=gy4h
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1','localhost','ravimuduthana.pythonanywhere.com']
 
 
 # Application definition
@@ -78,7 +78,7 @@ WSGI_APPLICATION = 'seleniumtutorialpoint.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': str(BASE_DIR / 'db.sqlite3'),
     }
 }
 
