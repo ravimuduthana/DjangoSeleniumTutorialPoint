@@ -1,4 +1,8 @@
+{% extends 'index.html' %}
+{% block content %}
+
 {% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,16 +12,31 @@
     <title>Get tooltip of an element</title>
 </head>
 <body>
-    <strong>Get tool tip of an element</strong>
-    <p>
-        A Tooltip in Selenium is a text that appears when a mouse hovers over an object on a web page. The object can be a link, an image, a button, a text area, etc. The tooltip text often gives more information about the object on which the user hovers over the mouse cursor
-    </p>
-    <img src="{% static 'images/gettooltipscript.png' %}",width="300" height="300">
-    <p>
-    <video width="320" height="240" controls>
-        <source src="{% static 'videous/gettooltip.mp4' %}" type="video/mp4">
-      get tooltip of an element
-    </video>
-</p>
+    
+    <div class="container">
+        <strong>Get tool tip of an element</strong><br>
+        <p>
+            A Tooltip in Selenium is a text that appears when a mouse hovers over an object on a web page. The object can be a link, an image, a button, a text area, etc. The tooltip text often gives more information about the object on which the user hovers over the mouse cursor
+        </p><br>
+        <img src="{% static 'images/gettooltipscript.png' %}",width="300" height="300">
+        <p>
+        <video width="320" height="240" controls>
+            <source src="{% static 'videous/gettooltip.mp4' %}" type="video/mp4">
+          get tooltip of an element
+        </video>
+        </p>
+    </div>
+    <style>
+    .container {
+        display: flex;
+        justify-content: center; 
+        margin-right: auto; margin-left: auto; width: 100px;
+   
+    }
+    .container p {
+        white-space: pre-line;
+    }
+</style>
 </body>
 </html>
+{% endblock %}

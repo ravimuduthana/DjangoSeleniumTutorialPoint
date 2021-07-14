@@ -14,13 +14,13 @@ body {
 
 .navbar {
   overflow: hidden;
-  background-color: #333;
+  background-color:whitesmoke;
 }
 
 .navbar a {
   float: left;
-  font-size: 16px;
-  color: white;
+  font-size: 13px;
+  color: black;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
@@ -29,13 +29,14 @@ body {
 .dropdown {
   float: left;
   overflow: hidden;
+  color: black;
 }
 
 .dropdown .dropbtn {
-  font-size: 16px;  
+  font-size: 15px;  
   border: none;
   outline: none;
-  color: white;
+  color: black;
   padding: 14px 16px;
   background-color: inherit;
   font-family: inherit;
@@ -43,7 +44,7 @@ body {
 }
 
 .navbar a:hover, .dropdown:hover .dropbtn {
-  background-color: red;
+  background-color: blue;
 }
 
 .dropdown-content {
@@ -87,15 +88,14 @@ body {
     </button>
     <div class="dropdown-content">
       <a href="{% url 'SeleniumJava' %}">Selenium Java</a>
-      <a href="#">Selenium Python</a>
-      
+      <a href="#">Selenium Python</a>      
     </div>
   </div> 
   <a href="{% url 'TestPage' %}">DemoPage</a>
   <a href="#news">Contact</a>
   <a href="#news">Blog</a>
-  <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+  <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search",align="middle">
+  <button class="btn btn-outline-success my-2 my-sm-0" type="submit" align="bottom">Search</button>
 </div>
 
 
@@ -103,3 +103,4 @@ body {
 </html>
 {% block content %}
 {% endblock %}
+
