@@ -1,0 +1,40 @@
+{% extends 'index.html' %}
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .radio{
+            padding: 5px;
+            border-width: 1px;
+            border-style: solid;
+            border-color: whitesmoke;
+            margin-left: auto;
+            margin-right: auto;
+            width: 500px;
+        }
+    </style>
+</head>
+<body>
+    <strong>Radio Buttons</strong>
+    <div class="radio">
+        <div class="mb-3">Do you like the site?</div>
+        <div class="custom-control custom-radio custom-control-inline">
+            <input type="radio" id="yesRadio" name="like" class="custom-control-input">
+            <label class="custom-control-label" for="yesRadio">Yes</label></div>
+            <div class="custom-control custom-radio custom-control-inline">
+                <input type="radio" id="impressiveRadio" name="like" class="custom-control-input">
+                <label class="custom-control-label" for="impressiveRadio">Impressive</label></div>
+                <div class="custom-control disabled custom-radio custom-control-inline">
+                    <input type="radio" id="noRadio" disabled="" name="like" class="custom-control-input disabled">
+                    <label class="custom-control-label disabled" for="noRadio">No</label>
+                </div>
+                </div>
+</body>
+</html>
+{% endblock %}

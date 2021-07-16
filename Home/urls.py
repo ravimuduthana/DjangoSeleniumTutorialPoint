@@ -9,5 +9,6 @@ urlpatterns =   [
     path('TextboxPage',views.TextboxPage,name='TextboxPage'),
     path('Introductiontoselenium',views.Introductiontoselenium,name='Introductiontoselenium'),
     path('update_server/',views.update,name='update'),
+    path('Radioboxpage',views.Radioboxpage,name='Radioboxpage'),
   
 ]
