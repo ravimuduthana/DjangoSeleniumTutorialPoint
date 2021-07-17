@@ -10,5 +10,7 @@ urlpatterns =   [
     path('Introductiontoselenium',views.Introductiontoselenium,name='Introductiontoselenium'),
     path('Radioboxpage',views.Radioboxpage,name='Radioboxpage'),
     path('HomePage',views.HomePage,name='HomePage'),
+    path('Contact',views.Contact,name='Contact'),
+    path('ToolTip',views.ToolTip,name='ToolTip'),
   
 ]

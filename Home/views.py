@@ -18,3 +18,7 @@ def Radioboxpage(request):
         return render(request,"Radioboxpage.html")
 def HomePage(request):
         return render(request,"Home.html")
+def Contact(request):
+        return render(request,"Contact.html")
+def ToolTip(request):
+        return render(request,"Tooltip.html")

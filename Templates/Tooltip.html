@@ -1,0 +1,25 @@
+{% extends 'index.html' %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tooltip</title>
+</head>
+<body>
+    <div id="toopTipContainer">
+        <div id="buttonToolTopContainer">
+            <p>Practice Tool Tips</p>
+            <button id="toolTipButton" type="button" class="btn btn-success">Hover me to see</button>
+        </div>
+        <div id="texFieldToolTopContainer" class="mt-4">
+            <input autocomplete="off" placeholder="Hover me to see" type="text" id="toolTipTextField" class=" mr-sm-2 form-control"></div>
+            <div id="texToolTopContainer" class="mt-4">
+                <a href="javascript:void(0)">Hover me to see</a> 
+                </div>
+            </div>
+</body>
+</html>
+{% endblock %}
