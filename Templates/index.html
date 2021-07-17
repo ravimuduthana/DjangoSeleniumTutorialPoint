@@ -1,106 +1,102 @@
 {% load static %}
-<!DOCTYPE html>
 <html>
-<head>
-       
-       <h1><img src="{% static 'images/logo.png' %}",width="50" height="50">TestAutomationPoint</h1>
-        
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<header class="header">
+        <nav class="navbar">
+            <a href="#" class="nav-logo">TestAutomationPoint</a>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="{% url 'HomePage' %}" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{% url 'SeleniumJava' %}" class="nav-link">Selenium</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{% url 'TestPage' %}" class="nav-link">TestPage</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Contact</a>
+                </li>
+				<li class="nav-item">
+                    <a href="#" class="nav-link">Blog</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+</header>
 <style>
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  background-color: rgb(190, 247, 247);
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;1,400&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    font-family: 'Roboto', sans-serif;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+.header{
+    border-bottom: 1px solid #E2E8F0;
 }
 
 .navbar {
-  overflow: hidden;
-  background-color:whitesmoke;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+}
+.hamburger {
+    display: none;
 }
 
-.navbar a {
-  float: left;
-  font-size: 13px;
-  color: black;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: #101010;
+}
+.nav-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.dropdown {
-  float: left;
-  overflow: hidden;
-  color: black;
+.nav-item {
+    margin-left: 5rem;
 }
 
-.dropdown .dropbtn {
-  font-size: 15px;  
-  border: none;
-  outline: none;
-  color: black;
-  padding: 14px 16px;
-  background-color: inherit;
-  font-family: inherit;
-  margin: 0;
+.nav-link{
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: #475569;
 }
 
-.navbar a:hover, .dropdown:hover .dropbtn {
-  background-color: blue;
+.nav-link:hover{
+    color: #482ff7;
 }
 
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-
-.dropdown-content a {
-  float: none;
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  text-align: left;
-}
-
-.dropdown-content a:hover {
-  background-color: #ddd;
-}
-
-.dropdown:hover .dropdown-content {
-  display: block;
+.nav-logo {
+    font-size: 2.1rem;
+    font-weight: 500;
+    color: #482ff7;
 }
 </style>
-</head>
-<body>
-  
-
-  </div>
-
-<div class="navbar">
-  <a href="#home">Home</a>
-  <a href="#news">About</a>
-  <div class="dropdown">
-    <button class="dropbtn">Testing 
-      <i class="fa fa-caret-down"></i>
-    </button>
-    <div class="dropdown-content">
-      <a href="{% url 'SeleniumJava' %}">Selenium Java</a>
-      <a href="#">Selenium Python</a>      
-    </div>
-  </div> 
-  <a href="{% url 'TestPage' %}">Test Page</a>
-  <a href="#news">Contact</a>
-  <a href="#news">Blog</a>
-  <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search",align="middle">
-  <button class="btn btn-outline-success my-2 my-sm-0" type="submit" align="bottom">Search</button>
-</div>
-
-
-</body>
 </html>
 {% block content %}
 {% endblock %}
