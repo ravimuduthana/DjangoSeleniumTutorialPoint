@@ -1,42 +1,82 @@
 {% extends 'index.html' %}
 {% block content %}
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TestPage</title>
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/testpagestyle.css' %}">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <!-- Popper.JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+  <!-- Bootstrap JS -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+  <!-- jQuery Custom Scroller CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
 </head>
 <body>
-    
-      
-        
-          <div id="collapse1" class="panel-collapse collapse">
-            <ul class="list-group">
-              <li class="nav-item">
-                <a class="nav-link active" href="{% url 'TextboxPage' %}">Textbox</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="{% url 'Radioboxpage' %}">Radio</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Listbox</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link disabled" href="#">Buttons</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link disabled" href="{% url 'ToolTip' %}">ToolTip</a>
-              </li>
-            </ul>
-          </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-2 sidebar">
+                <div class="wrapper">
+                    <!-- Sidebar -->
+                    <nav id="sidebar">
+                        
+                
+                        <ul class="list-unstyled components">
+                            
+                            <li class="active">
+                                <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><strong>Elements</strong></a>
+                                <ul class="collapse list-unstyled" id="homeSubmenu">
+                                    <li>
+                                        <a href="#">Textbox</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Radio</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Checkbox</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Tooltip</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            
+                
+                    </nav>
+                </div>
+            </div>
+            <div class="col-md-10 maincontent">
+                maincontent
+            </div>
+
         </div>
-      </div>
-        
-     
-    
+
+    </div>
+
+      <script>
+        $(document).ready(function () {
+      
+          $("#sidebar").mCustomScrollbar({
+               theme: "minimal"
+          });
+      
+          $('#sidebarCollapse').on('click', function () {
+              // open or close navbar
+              $('#sidebar').toggleClass('active');
+              // close dropdowns
+              $('.collapse.in').toggleClass('in');
+              // and also adjust aria-expanded attributes we use for the open/closed arrows
+              // in our CSS
+              $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+          });
+      
+      });
+      </script>
 </body>
 </html>
-
 {% endblock %}

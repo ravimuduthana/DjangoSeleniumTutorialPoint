@@ -22,3 +22,7 @@ def Contact(request):
         return render(request,"Contact.html")
 def ToolTip(request):
         return render(request,"Tooltip.html")
+def About(request):
+        return render(request,"About.html")
+def SeleniumPython(request):
+        return render(request,"SeleniumPython.html")

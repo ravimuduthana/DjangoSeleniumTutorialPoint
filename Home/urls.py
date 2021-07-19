@@ -12,5 +12,7 @@ urlpatterns =   [
     path('HomePage',views.HomePage,name='HomePage'),
     path('Contact',views.Contact,name='Contact'),
     path('ToolTip',views.ToolTip,name='ToolTip'),
+    path('About',views.About,name='About'),
+    path('SeleniumPython',views.SeleniumPython,name='SeleniumPython'),
   
 ]
