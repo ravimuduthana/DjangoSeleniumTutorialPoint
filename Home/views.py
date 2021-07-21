@@ -7,8 +7,7 @@ def index(request):
     return render(request,"index.html")
 def TestPage(request):
     return render(request,"TestPage.html")
-def TextboxPage(request):
-    return render(request,"TextboxPage.html")
+
 def SeleniumJava(request):
     return render(request,"SeleniumJava.html")
 def Introductiontoselenium(request):
@@ -26,3 +25,5 @@ def About(request):
         return render(request,"About.html")
 def SeleniumPython(request):
         return render(request,"SeleniumPython.html")
+def Contact(request):
+        return render(request,"Contact.html")

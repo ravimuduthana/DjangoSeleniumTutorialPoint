@@ -34,11 +34,14 @@
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <li><a class="dropdown-item" href="{% url 'SeleniumJava' %}">Selenium Java</a></li>
-                  <li><a class="dropdown-item" href="#">Selenium Python</a></li>
+                  <li><a class="dropdown-item" href="{% url 'SeleniumPython' %}">Selenium Python</a></li>
                 </ul>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="{% url 'TestPage' %}">Test Page</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'Contact' %}">Contact</a>
               </li>
             </ul>
             <form class="d-flex">
