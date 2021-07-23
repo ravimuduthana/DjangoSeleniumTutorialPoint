@@ -7,7 +7,7 @@ def index(request):
     return render(request,"index.html")
 def TestPage(request):
     return render(request,"TestPage.html")
-
+    textboxstatus=request.POST.get("mytextbox")
 def SeleniumJava(request):
     return render(request,"SeleniumJava.html")
 def Introductiontoselenium(request):
@@ -27,3 +27,5 @@ def SeleniumPython(request):
         return render(request,"SeleniumPython.html")
 def Contact(request):
         return render(request,"Contact.html")
+def Textboxpage(request):
+        return render(request,"TextboxPage.html")

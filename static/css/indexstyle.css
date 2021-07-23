@@ -1,7 +1,7 @@
 .nav-item>.nav-link,.btn-outline-success,.navbar-brand,.dropdown-item{
     color: white!important;
 }
-.navbar-expand-lg,.dropdown-menu{
+.navbar,.dropdown-menu{
     background-color: #2c7c9a;
 }
 

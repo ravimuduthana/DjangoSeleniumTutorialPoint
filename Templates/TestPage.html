@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="{% static 'css/testpagestyle.css' %}">
+    
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <!-- Popper.JS -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
@@ -16,8 +16,19 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
   <!-- jQuery Custom Scroller CDN -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+<style>
+    .sidebar{
+        min-height: 600px;
+        border: 1px solid grey;
+        overflow-y: scroll;
+    }
+    
+</style>
 </head>
 <body>
+    <form class="",action="" method="POST">
+        {% csrf_token %}
+    
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-2 sidebar">
@@ -32,7 +43,7 @@
                                 <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><strong>Elements</strong></a>
                                 <ul class="collapse list-unstyled" id="homeSubmenu">
                                     <li>
-                                        <a class ="mytextbox" href="#mytextbox" data-toggle="collapse" aria-expanded="true" aria-controls="collapseOne">Textbox</a>
+                                        <a class ="mytextbox" href=#mytextbox" data-toggle="collapse">Textbox</a>
                                     </li>
                                     <li>
                                         <a class ="myradio" href="#myradio" data-toggle="collapse" aria-expanded="true" aria-controls="collapseOne">Radio</a>
@@ -51,8 +62,8 @@
                 </div>
             </div>
             <div class="col-md-10 maincontent">
-                Please select an item from the left
-                <div class="collapse" id="mytextbox">
+                
+                <div id="mytextbox">
                     <strong>Text Box</strong>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Email address</label>
@@ -84,6 +95,23 @@
                     <label class="custom-control-label disabled" for="noRadio">No</label>
                 </div>
                 </div>
+                <div class="collapse" id="mytooltip">
+                    
+                        <strong>Tool Tip</strong>
+                
+                    
+                    <br>
+                    <br>
+                    <button type="button" class="btn btn-primary" data-toggle="tooltip" title="You Hovered over the button">
+                        Hover me to see
+                      </button>
+                      <br>
+                      <a type="email" class="link lnk-primary" data-toggle="tooltip" title="You Hovered over the Link">
+                        Hover me to see
+                      </a>
+                      <br>
+                      <input type="email" class="txt txt-primary" data-toggle="tooltip" title="You Hovered over the text field" placeholder="Hover me to see">
+                      
 
         </div>
 
@@ -110,6 +138,7 @@
       
       });
       </script>
+    </form>
 </body>
 </html>
 {% endblock %}
