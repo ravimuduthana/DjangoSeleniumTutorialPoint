@@ -29,3 +29,5 @@ def Contact(request):
         return render(request,"Contact.html")
 def Textboxpage(request):
         return render(request,"TextboxPage.html")
+def Checkboxpage(request):
+        return render(request,"Checkboxpage.html")

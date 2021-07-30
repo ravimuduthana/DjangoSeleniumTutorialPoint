@@ -1,6 +1,6 @@
 {% extends 'index.html' %}
 {% block content %}
-
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,22 +8,62 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        .radio{
-            padding: 5px;
-            border-width: 1px;
-            border-style: solid;
-            border-color: whitesmoke;
-            margin-left: auto;
-            margin-right: auto;
-            width: 500px;
-        }
-    </style>
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <!-- Popper.JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+  <!-- Bootstrap JS -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+  <!-- jQuery Custom Scroller CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+<style>
+    .sidebar{
+        min-height: 600px;
+        border: 1px solid grey;
+        overflow-y: scroll;
+    }
+    
+</style>
 </head>
 <body>
-    <strong>Radio Buttons</strong>
-    <div class="radio">
-        <div class="mb-3">Do you like the site?</div>
+
+    
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-2 sidebar">
+                <div class="wrapper">
+                    <!-- Sidebar -->
+                    <nav id="sidebar">
+                        
+                
+                        <ul class="list-unstyled components">
+                            
+                            <li class="active">
+                                <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><strong>Elements</strong></a>
+                                <ul class="collapse list-unstyled" id="homeSubmenu">
+                                    <li>
+                                        <a class ="mytextbox" href="{% url 'Textboxpage' %}">Textbox</a>
+                                    </li>
+                                    <li>
+                                        <a class ="myradio" href="{% url 'Radioboxpage' %}" data-toggle="collapse" aria-expanded="true" aria-controls="collapseOne">Radio</a>
+                                    </li>
+                                    <li>
+                                        <a class="mycheckbox" href="{% url 'Checkboxpage' %}" >Checkbox</a>
+                                    </li>
+                                    <li>
+                                        <a class="mytooltip"href="{% url 'Tooltip' %}" >Tooltip</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            
+                
+                    </nav>
+                </div>
+            </div>
+            <div class="col-md-10 maincontent">
+                       
+    <div id="myradio">
+        <strong>Radio Buttons</strong>
         <div class="custom-control custom-radio custom-control-inline">
             <input type="radio" id="yesRadio" name="like" class="custom-control-input">
             <label class="custom-control-label" for="yesRadio">Yes</label></div>
@@ -35,6 +75,53 @@
                     <label class="custom-control-label disabled" for="noRadio">No</label>
                 </div>
                 </div>
+                <div class="collapse" id="mytooltip">
+                    
+                        <strong>Tool Tip</strong>
+                
+                    
+                    <br>
+                    <br>
+                    <button type="button" class="btn btn-primary" data-toggle="tooltip" title="You Hovered over the button">
+                        Hover me to see
+                      </button>
+                      <br>
+                      <a type="email" class="link lnk-primary" data-toggle="tooltip" title="You Hovered over the Link">
+                        Hover me to see
+                      </a>
+                      <br>
+                      <input type="email" class="txt txt-primary" data-toggle="tooltip" title="You Hovered over the text field" placeholder="Hover me to see">
+                      
+
+        </div>
+                </div>
+                
+        
+
+    </div>
+
+      <script>
+        $(document).ready(function () {
+      
+          $("#sidebar").mCustomScrollbar({
+               theme: "minimal"
+          });
+      
+          $('#sidebarCollapse').on('click', function () {
+              // open or close navbar
+              $('#sidebar').toggleClass('active');
+              // close dropdowns
+              $('.collapse.in').toggleClass('in');
+              // and also adjust aria-expanded attributes we use for the open/closed arrows
+              // in our CSS
+              $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+          });
+          
+          
+      
+      });
+      </script>
+  
 </body>
 </html>
 {% endblock %}

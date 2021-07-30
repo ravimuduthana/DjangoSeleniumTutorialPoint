@@ -11,9 +11,10 @@ urlpatterns =   [
     path('Radioboxpage',views.Radioboxpage,name='Radioboxpage'),
     path('HomePage',views.HomePage,name='HomePage'),
     path('Contact',views.Contact,name='Contact'),
-    path('ToolTip',views.ToolTip,name='ToolTip'),
+    path('Tooltip',views.ToolTip,name='Tooltip'),
     path('About',views.About,name='About'),
     path('SeleniumPython',views.SeleniumPython,name='SeleniumPython'),
     path('Contact',views.Contact,name='Contact'),
+    path('Checkboxpage',views.Checkboxpage,name='Checkboxpage'),
   
 ]
