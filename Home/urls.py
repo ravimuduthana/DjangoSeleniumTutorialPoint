@@ -4,10 +4,9 @@ from .import views
 urlpatterns =   [
 
     path('',views.index,name='index'),
-    path('SeleniumJava',views.SeleniumJava,name='SeleniumJava'),
     path('TestPage',views.TestPage,name='TestPage'),
     path('Textboxpage',views.Textboxpage,name='Textboxpage'),
-    path('Introductiontoselenium',views.Introductiontoselenium,name='Introductiontoselenium'),
+    path('gettooltiptext',views.gettooltiptext,name='gettooltiptext'),
     path('Radioboxpage',views.Radioboxpage,name='Radioboxpage'),
     path('HomePage',views.HomePage,name='HomePage'),
     path('Contact',views.Contact,name='Contact'),
@@ -16,5 +15,6 @@ urlpatterns =   [
     path('SeleniumPython',views.SeleniumPython,name='SeleniumPython'),
     path('Contact',views.Contact,name='Contact'),
     path('Checkboxpage',views.Checkboxpage,name='Checkboxpage'),
+    path('excelselenium',views.excelselenium,name='excelselenium'),
   
 ]

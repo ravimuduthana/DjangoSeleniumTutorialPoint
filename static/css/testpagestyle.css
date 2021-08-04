@@ -1,5 +1,9 @@
-.sidebar{
-    min-height: 600px;
-    border: 1px solid grey;
-    overflow-y: scroll;
+.testpagemaincontent{
+  padding-right: 40px;
+  padding-top: 40px;
+}
+.testpagesidebar
+{
+    padding-left: 40px;
+    padding-top: 40px;
 }

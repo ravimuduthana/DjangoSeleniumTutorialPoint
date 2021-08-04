@@ -8,11 +8,10 @@ def index(request):
 def TestPage(request):
     return render(request,"TestPage.html")
     textboxstatus=request.POST.get("mytextbox")
-def SeleniumJava(request):
-    return render(request,"SeleniumJava.html")
-def Introductiontoselenium(request):
+
+def gettooltiptext(request):
     #return HttpResponse("Updated code on PythonAnywhere")
-    return render(request,"introduction-to-selenium.html")
+    return render(request,"gettooltiptext.html")
 def Radioboxpage(request):
         return render(request,"Radioboxpage.html")
 def HomePage(request):
@@ -31,3 +30,5 @@ def Textboxpage(request):
         return render(request,"TextboxPage.html")
 def Checkboxpage(request):
         return render(request,"Checkboxpage.html")
+def excelselenium(request):
+        return render(request,"excelselenium.html")

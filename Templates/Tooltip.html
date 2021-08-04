@@ -1,77 +1,9 @@
-{% extends 'index.html' %}
 {% block content %}
-{% load static %}
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Hugo 0.84.0">
-    <title>Sidebars · Bootstrap v5.0</title>
+{% include 'TestPage.html' %}
 
-    
-
-    
-
-    <!-- Bootstrap core CSS -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <style>
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        user-select: none;
-      }
-
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
-        }
-      }
-    </style>
-
-    
-    <!-- Custom styles for this template -->
-    <link href="{% static 'css/sidebars.css' %}" rel="stylesheet">
-  </head>
-  <body>
-  
-
-
-
-  
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-2 sidebar">
-
-
- 
-
-    <ul class="list-unstyled ps-0">
-      <li class="mb-1">
-        <button id="sidebar" class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="true">
-          Elements
-        </button>
-        <div class="collapse show" id="home-collapse">
-          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-            <li><a href="{% url 'Textboxpage' %}" class="link-dark rounded">Textbox</a></li>
-            <li><a href="{% url 'Radioboxpage' %}" class="link-dark rounded">Radiobox</a></li>
-            <li><a href="{% url 'Checkboxpage' %}" class="link-dark rounded">Checkbox</a></li>
-            <li><a href="{% url 'Tooltip' %}" class="link-dark rounded">Tooltip</a></li>
-          </ul>
-        </div>
-      </li>
-        
-     
-    </ul>
-
-</div>
-<div class="col-md-10 maincontent">
-                       
+<div class="col-md-10 testpagemaincontent">
+  <div class="card">
+    <div class="card-body">                   
     <div id="toopTipContainer">
         <div id="buttonToolTopContainer">
             <p>Practice Tool Tips</p>
@@ -90,34 +22,4 @@
 
 
 
-  
-
-
-
-    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
-
-      <script src="{% static 'js/sidebars.js' %}"></script>
-      <script>
-        $(document).ready(function () {
-      
-          $("#sidebar").mCustomScrollbar({
-               theme: "minimal"
-          });
-      
-          $('#sidebarCollapse').on('click', function () {
-              // open or close navbar
-              $('#sidebar').toggleClass('active');
-              // close dropdowns
-              $('.collapse.in').toggleClass('in');
-              // and also adjust aria-expanded attributes we use for the open/closed arrows
-              // in our CSS
-              $('a[aria-expanded=true]').attr('aria-expanded', 'false');
-          });
-          
-          
-      
-      });
-      </script>
-  </body>
-</html>
 {% endblock %}
