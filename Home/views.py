@@ -30,5 +30,5 @@ def Textboxpage(request):
         return render(request,"TextboxPage.html")
 def Checkboxpage(request):
         return render(request,"Checkboxpage.html")
-def excelselenium(request):
-        return render(request,"excelselenium.html")
+def webdrivermanager(request):
+        return render(request,"webdrivermanager.html")

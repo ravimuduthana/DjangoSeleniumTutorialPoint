@@ -15,6 +15,6 @@ urlpatterns =   [
     path('SeleniumPython',views.SeleniumPython,name='SeleniumPython'),
     path('Contact',views.Contact,name='Contact'),
     path('Checkboxpage',views.Checkboxpage,name='Checkboxpage'),
-    path('excelselenium',views.excelselenium,name='excelselenium'),
+    path('webdrivermanager',views.webdrivermanager,name='webdrivermanager'),
   
 ]
