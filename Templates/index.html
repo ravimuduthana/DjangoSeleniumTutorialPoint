@@ -2,35 +2,43 @@
 {% block content %}
 {% load static %}
 
-<link href="{% static 'css/indexstyle.css' %}" rel="stylesheet">
+<link href="{% static 'css/indexstyle.css' %}" rel="stylesheet"/>
     
 
     
     <!-- Custom styles for this template -->
-    <link href="{% static 'css/sidebars.css' %}" rel="stylesheet">
+    <link href="{% static 'css/sidebars.css' %}" rel="stylesheet"/>
   
     
 
     <div class="row">
-      <div class="col-sm-4 indexpagesidebar">
+      <div class="col-sm-8 indexpagevideo">
         <div class="card">
+          <div class="card-body">
+            <iframe class="getooltipvideo" src="https://www.youtube.com/embed/kbizBdP-Cqw" frameborder="0" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4 indexpagesidebarcol" >
+        <div class="card indexpagesidebarcard">
           <div class="card-body">
             <ul class="list-unstyled ps-0">
               <li class="mb-1">
-                <button id="sidebar" class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="true">
-                  Selenium Java
-                </button>
+
                 <div class="collapse show" id="home-collapse">
-                  <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                    <li><a href="{% url 'gettooltiptext' %}" class="link-dark rounded">Get Tooltip Text Using Selenium WebDriver</a></li>
-                    <li><a href="#" class="link-dark rounded">Print Table Data Using Selenium WebDriver</a></li>
-                    <li><a href="#" class="link-dark rounded">Alerts Handling Using Selenium WebDriver</a></li>
-                    <li><a href="#" class="link-dark rounded">Working with Excel Using Selenium WebDriver</a></li>
-                    <li><a href="#" class="link-dark rounded">Working Wtih DB Using Selenium WebDriver</a></li>
-                    <li><a href="#" class="link-dark rounded">Working With API Using Selenium Webdriver</a></li>
-                    <li><a href="#" class="link-dark rounded">Handling Windows Popups Using Selenium Webdriver</a></li>
-                    <li><a href="#" class="link-dark rounded">Working With TestNG In Selenium Webdriver</a></li>
-                    <li><a href="#" class="link-dark rounded">Working Maven Project In Selenium Webdriver</a></li>
+                  <div class="card-header">
+                    Selenium Java
+                  </div>
+                  <ul class="list-group list-group-flush">
+                    <li><a href="{% url 'gettooltiptext' %}" class="list-group-item">Get Tooltip Text Using Selenium WebDriver</a></li>
+                    <li><a href="#" class="list-group-item">Print Table Data Using Selenium WebDriver</a></li>
+                    <li><a href="#" class="list-group-item">Alerts Handling Using Selenium WebDriver</a></li>
+                    <li><a href="#" class="list-group-item">Working with Excel Using Selenium WebDriver</a></li>
+                    <li><a href="#" class="list-group-item">Working Wtih DB Using Selenium WebDriver</a></li>
+                    <li><a href="#" class="list-group-item">Working With API Using Selenium Webdriver</a></li>
+                    <li><a href="#" class="list-group-item">Handling Windows Popups Using Selenium Webdriver</a></li>
+                    <li><a href="#" class="list-group-item">Working With TestNG In Selenium Webdriver</a></li>
+                    <li><a href="#" class="list-group-item">Working Maven Project In Selenium Webdriver</a></li>
         
                   </ul>
                 </div>
@@ -41,12 +49,14 @@
 </div>
 </div>
 </div>
-<div class="col-sm-8 col-md-8 maincontent">
+
+</div>
+<div class="row">
+<div class="col-sm-12 col-md-12 maincontent">
   <div class="card">
     <div class="card-body">
     <h1 class="title">Get Tooltip Text Using Selenium Webdriver</h1>
-    <br>
-    <iframe class="getooltipvideo" src="https://www.youtube.com/embed/kbizBdP-Cqw" frameborder="0" allowfullscreen></iframe>
+    
     <br>
     <br>
     <p>
@@ -121,6 +131,16 @@ driver.close();
       
 </div>
 </div>
+</div>
+<!-- AddToAny BEGIN -->
+<div class="a2a_kit a2a_kit_size_32 a2a_default_style">
+  <a class="a2a_dd" href="https://www.addtoany.com/share"></a>
+  <a class="a2a_button_facebook"></a>
+  <a class="a2a_button_twitter"></a>
+  <a class="a2a_button_email"></a>
+  </div>
+  <script async src="https://static.addtoany.com/menu/page.js"></script>
+  <!-- AddToAny END -->
 <div id="disqus_thread"></div>
 <script>
     /**
@@ -141,7 +161,7 @@ driver.close();
 </script>
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 </div>
-</div>
+
   
     
 
