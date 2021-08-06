@@ -4,14 +4,16 @@ from django.views.decorators.csrf import csrf_exempt
 # Create your views here.
 
 def index(request):
-    return render(request,"index.html")
+        name = {'sample_file': "gettooltiptext.html",'sample_video': "https://www.youtube.com/embed/kbizBdP-Cqw" }
+        return render(request,"index.html",name)
 def TestPage(request):
     return render(request,"TestPage.html")
     textboxstatus=request.POST.get("mytextbox")
 
 def gettooltiptext(request):
     #return HttpResponse("Updated code on PythonAnywhere")
-    return render(request,"gettooltiptext.html")
+    name = {'sample_file': "gettooltiptext.html",'sample_video': "https://www.youtube.com/embed/kbizBdP-Cqw" }
+    return render(request,"index.html",name)
 def Radioboxpage(request):
         return render(request,"Radioboxpage.html")
 def HomePage(request):
@@ -31,4 +33,5 @@ def Textboxpage(request):
 def Checkboxpage(request):
         return render(request,"Checkboxpage.html")
 def webdrivermanager(request):
-        return render(request,"webdrivermanager.html")
+        name = {'sample_file': "webdrivermanager.html",'sample_video': "https://www.youtube.com/embed/kbizBdP-Cqw" }
+        return render(request,"index.html",name)

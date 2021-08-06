@@ -1,1 +1,44 @@
-{% extends 'index.html' %}
+{% block content1 %}
+<div class="webdrivermanagerpage">
+    <h1 class="title">WebDriver WebDriverManager</h1>
+    <p>
+    Why is WebDriverManager needed?
+
+WebDriverManager in Selenium, as mentioned above, is a class that allows us to download and set the browser driver binaries without us, as developers, having to put them in automation scripts manually.
+
+So a WebDriverManager class in Selenium:
+
+automates the management of WebDriver binaries.
+downloads the appropriate driver binaries, if not already present, into the local cache. 
+downloads the latest version of the browser binary, unless otherwise specified.
+Eliminates the need to store driver binaries locally. We also need not maintain various versions of the binary driver files for different browsers.
+ 
+
+ 
+
+How to instantiate a browser using WebDriverManager in Selenium?
+But how do we set the browser using this class? To do this, we use WebDriverManager class code. It is as shown below in place of the “System.setProperty()” call.
+
+WebDriverManager.chromedriver().setup();
+1
+WebDriverManager.chromedriver().setup();
+It will set the Chrome browser in the automation script.
+
+The next step is to set the browser binaries. WebDriverManager has an automated way to download browser executables(exes) or binaries. It supports different browsers like Chrome, Firefox, Microsoft Edge, Internet Explorer, Opera, or PhantomJS.
+
+Consider the following lines of code:
+
+WebDriverManager.chromedriver().setup();
+driver = new ChromeDriver();
+1
+2
+WebDriverManager.chromedriver().setup();
+driver = new ChromeDriver();
+
+The first line performs the following functions:
+WebDriverManager.chromedriver().setup: checks for the latest version of the specified WebDriver binary. If the binaries are not present on the machine, then it will download the WebDriver binaries. Next, it instantiates the Selenium WebDriver instance with the ChromeDriver.
+Using the WebDriverManager in Selenium test cases, it needs to include in the Selenium test project. Let’s see how we can download and use the WebDriverManager in a Selenium project:
+
+</p>
+</div>
+{% endblock %}
