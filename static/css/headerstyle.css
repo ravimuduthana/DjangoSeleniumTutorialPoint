@@ -1,6 +1,13 @@
 .nav-link{
-   color: black!important;
+   color: white!important;
 }      
 .navbar-brand{
-  color: black!important;
+  color: white!important;
+}
+.cardheader{
+  background-color: #563d7c;
+}
+.searchbutton{
+ 
+  color: white!important;
 }

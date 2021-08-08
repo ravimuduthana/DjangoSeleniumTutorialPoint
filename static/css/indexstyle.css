@@ -3,6 +3,9 @@
  overflow-y:scroll;
  max-height: 330px;
 }
+.indexpageul>li>a{
+    color: white;
+}
 .getooltipvideo
 {
 width: 100%;
@@ -13,8 +16,16 @@ height: 400px;
 width: 60%;
 height: 400px;
 }
-.card-header
+.indexsidebar
 {
 height: 70px;
 text-align: center;
+color: white;
+}
+.indexpagesidebarcard{
+    background-color: #563d7c;
+}
+.indexpageul>li{
+    background-color: #563d7c;
+    color: #563d7c;
 }
