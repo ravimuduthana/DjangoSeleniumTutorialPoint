@@ -2,9 +2,11 @@
 {
  overflow-y:scroll;
  max-height: 330px;
+ background-color: red;
 }
-.indexpageul>li>a{
-    color: white;
+.indexpageul>li{
+    color: red;
+    background-color: red;
 }
 .getooltipvideo
 {
@@ -20,12 +22,14 @@ height: 400px;
 {
 height: 70px;
 text-align: center;
-color: white;
+padding-top: 20px;
+border-style: solid 2px;
+border-color: white;
 }
-.indexpagesidebarcard{
+
+.indexpageul>.list-group-item{
     background-color: #563d7c;
 }
-.indexpageul>li{
-    background-color: #563d7c;
-    color: #563d7c;
+.socialicongithub{
+    padding-right: 20px;
 }
