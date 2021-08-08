@@ -1,14 +1,11 @@
 {% extends 'header.html' %}
 {% block content %}
 {% load static %}
-<link href="{% static 'css/indexstyle.css' %}" rel="stylesheet"/>
-<link href="{% static 'css/all.min.css' %}" rel="stylesheet"/>
 
-    
+<link href="{% static 'css/indexstyle.css' %}" rel="stylesheet"/>
+<!-- Custom styles for this template -->
+<link href="{% static 'css/sidebars.css' %}" rel="stylesheet">
 <script src="https://kit.fontawesome.com/56990d70b4.js" crossorigin="anonymous"></script>
-  
-     <!-- Custom styles for this template -->
-     <link href="{% static 'css/sidebars.css' %}" rel="stylesheet">
  
     <div class="row">
       <div class="col-md-8 indexpagevideo">
@@ -44,8 +41,8 @@
 </div>
 </div>
 </div>
-
-
+</div> 
+<div class="row">
 <div class="col-md-12 maincontent">
   <div class="card">
     <div class="card-body">
@@ -68,10 +65,7 @@
 </div>
 </div>
 </div>
-              </ul>
-            </div>
-          </li> 
-        </ul>
+  
 
     
 <!-- AddToAny BEGIN -->
@@ -85,6 +79,8 @@
   <!-- AddToAny END -->
 
 <div id="disqus_thread"></div>
+
+</div>
 <script>
     /**
     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
@@ -103,11 +99,6 @@
     })();
 </script>
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-</div>
-
-
-  
-    
 
       <script src="{% static 'js/sidebars.js' %}"></script>
       <script>

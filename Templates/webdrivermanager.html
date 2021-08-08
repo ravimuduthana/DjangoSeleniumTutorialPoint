@@ -1,44 +1,95 @@
 {% block content1 %}
+{% load static %}
+<link href="{% static 'css/code.css' %}" rel="stylesheet">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/default.min.css">
 <div class="webdrivermanagerpage">
     <h1 class="title">WebDriver WebDriverManager</h1>
     <p>
-    Why is WebDriverManager needed?
+        WebDriverManager is a library which allows us to automate the management of the drivers (e.g. iedriver, chromedriver, geckodriver, etc.) required by selenium web driver.
+        <br>
+        Go to maven repository ,find stable version and get the dependency from <a href="https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager" target="_blank">https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager</a>
+        or add dependency from below into your pom.xml file
+    </p>
+    <br>
+   
+    <div class="codecontainer">                
+        <div class="code-wrapper">    
+        <pre>
+          <code id="code3">
+       
+                <textarea id="maven-a" readonly="true" rows="7" cols="40" style="width: 100%" class="snippet">&lt;!-- https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager --&gt;
+                    &lt;dependency&gt;
+                        &lt;groupId&gt;io.github.bonigarcia&lt;/groupId&gt;
+                        &lt;artifactId&gt;webdrivermanager&lt;/artifactId&gt;
+                        &lt;version&gt;4.4.3&lt;/version&gt;
+                    &lt;/dependency&gt;
+                    </textarea>
+                </code>
+            </pre>
+            <button class="copy-button" id="copy-button" data-clipboard-target="#code3">Copy</button> 
+            </div>
+            </div>
 
-WebDriverManager in Selenium, as mentioned above, is a class that allows us to download and set the browser driver binaries without us, as developers, having to put them in automation scripts manually.
 
-So a WebDriverManager class in Selenium:
+        Use these code in the script to initiate the driver using webdriver manager
+        <div class="codecontainer">                
+            <div class="code-wrapper">    
+            <pre>
+              <code id="code2"> 
+                //set webdrivermanager for chrome
+                WebDriverManager.chromedriver().setup();
+                ChromeDriver driver=new ChromeDriver();
+            </code>
+        </pre>
+        <button class="copy-button" id="copy-button" data-clipboard-target="#code2">Copy</button> 
+        </div>
+        </div>
 
-automates the management of WebDriver binaries.
-downloads the appropriate driver binaries, if not already present, into the local cache. 
-downloads the latest version of the browser binary, unless otherwise specified.
-Eliminates the need to store driver binaries locally. We also need not maintain various versions of the binary driver files for different browsers.
- 
 
- 
+        <div class="codecontainer">                
+            <div class="code-wrapper">    
+            <pre>
+              <code id="code1"> 
+        
+        package Scripts;
 
-How to instantiate a browser using WebDriverManager in Selenium?
-But how do we set the browser using this class? To do this, we use WebDriverManager class code. It is as shown below in place of the “System.setProperty()” call.
+        import org.openqa.selenium.WebDriver;
+        import org.openqa.selenium.chrome.ChromeDriver;
 
-WebDriverManager.chromedriver().setup();
-1
-WebDriverManager.chromedriver().setup();
-It will set the Chrome browser in the automation script.
+        import io.github.bonigarcia.wdm.WebDriverManager;
 
-The next step is to set the browser binaries. WebDriverManager has an automated way to download browser executables(exes) or binaries. It supports different browsers like Chrome, Firefox, Microsoft Edge, Internet Explorer, Opera, or PhantomJS.
+        public class Webdrivermanager {
+	    public static void main(String[] args) throws InterruptedException {
+		
+		
+		//With webdriver manager,initiating the driver and opening the website
+		
+		WebDriverManager.chromedriver().setup();
+		ChromeDriver driver1=new ChromeDriver();
+		driver1.get("http://www.testautomationpoint.com/");
+		
+	}
 
-Consider the following lines of code:
+}
+</code>
+</pre>
+<button class="copy-button" id="copy-button" data-clipboard-target="#code1">Copy</button> 
+</div>
+</div>
 
-WebDriverManager.chromedriver().setup();
-driver = new ChromeDriver();
-1
-2
-WebDriverManager.chromedriver().setup();
-driver = new ChromeDriver();
 
-The first line performs the following functions:
-WebDriverManager.chromedriver().setup: checks for the latest version of the specified WebDriver binary. If the binaries are not present on the machine, then it will download the WebDriver binaries. Next, it instantiates the Selenium WebDriver instance with the ChromeDriver.
-Using the WebDriverManager in Selenium test cases, it needs to include in the Selenium test project. Let’s see how we can download and use the WebDriverManager in a Selenium project:
+
+        
 
 </p>
 </div>
+<script src="{% static 'js/code.js' %}"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.8/clipboard.min.js"></script>
+<script>
+    hljs.initHighlighting.called = false;
+    hljs.initHighlighting();
+    new ClipboardJS(".copy-button");
+
+</script>
 {% endblock %}

@@ -2,13 +2,9 @@ body {
     min-height: 100vh;
     min-height: -webkit-fill-available;
   }
-  
   html {
     height: -webkit-fill-available;
   }
-  
-  
-  
   .btn-toggle {
     display: inline-flex;
     align-items: center;
@@ -23,7 +19,6 @@ body {
     color: rgba(0, 0, 0, .85);
     background-color: #d2f4ea;
   }
-  
   .btn-toggle::before {
     width: 1.25em;
     line-height: 0;
@@ -31,14 +26,12 @@ body {
     transition: transform .35s ease;
     transform-origin: .5em 50%;
   }
-  
   .btn-toggle[aria-expanded="true"] {
     color: rgba(0, 0, 0, .85);
   }
   .btn-toggle[aria-expanded="true"]::before {
     transform: rotate(90deg);
   }
-  
   .btn-toggle-nav a {
     display: inline-flex;
     padding: .1875rem .5rem;
@@ -50,10 +43,8 @@ body {
   .btn-toggle-nav a:focus {
     background-color: #d2f4ea;
   }
-  
   .scrollarea {
     overflow-y: auto;
   }
-  
   .fw-semibold { font-weight: 600; }
   .lh-tight { line-height: 1.25; }
