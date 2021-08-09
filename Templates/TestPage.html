@@ -8,7 +8,7 @@
     <!-- Custom styles for this template -->
     <link href="{% static 'css/sidebars.css' %}" rel="stylesheet">
         <div class="row">
-            <div class="col-sm-2 testpagesidebar">
+            <div class="col-sm-3 testpagesidebar">
 
               <div class="card">
                 <div class="card-body">
@@ -17,14 +17,13 @@
     <ul class="list-unstyled ps-0">
       <li class="mb-1">
         <button id="sidebar" class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="true">
-          Elements
+          Test Components
         </button>
         <div class="collapse show" id="home-collapse">
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
             <li><a href="{% url 'Textboxpage' %}" class="link-dark rounded">Textbox</a></li>
-            <li><a href="{% url 'Radioboxpage' %}" class="link-dark rounded">Radiobox</a></li>
-            <li><a href="{% url 'Checkboxpage' %}" class="link-dark rounded">Checkbox</a></li>
             <li><a href="{% url 'Tooltip' %}" class="link-dark rounded">Tooltip</a></li>
+            <li><a href="{% url 'alertstestpage' %}" class="link-dark rounded">Alerts</a></li>
           </ul>
         </div>
       </li> 

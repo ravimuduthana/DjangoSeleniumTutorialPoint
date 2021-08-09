@@ -16,5 +16,7 @@ urlpatterns =   [
     path('Contact',views.Contact,name='Contact'),
     path('Checkboxpage',views.Checkboxpage,name='Checkboxpage'),
     path('webdrivermanager',views.webdrivermanager,name='webdrivermanager'),
+    path('alertstestpage',views.alertstestpage,name='alertstestpage'),
+    path('alertshandling',views.alertshandling,name='alertshandling'),
   
 ]

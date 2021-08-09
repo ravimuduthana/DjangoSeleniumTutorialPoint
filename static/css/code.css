@@ -14,13 +14,10 @@
     top: 8px;
     right: 8px;
     padding: 7px;
-    background-color: blue;
     border: none;
     color:white;
     border-radius: 5px;
     cursor: pointer;
     transition: all 0.2s ease-in;
 }
-#copy-button:hover{
-    background-color: green;
-}
+

@@ -32,6 +32,11 @@ def Textboxpage(request):
         return render(request,"TextboxPage.html")
 def Checkboxpage(request):
         return render(request,"Checkboxpage.html")
+def alertstestpage(request):
+        return render(request,"alertstestpage.html")
 def webdrivermanager(request):
         name = {'sample_file': "webdrivermanager.html",'sample_video': "https://www.youtube.com/embed/f4qSxXWmRIA" }
+        return render(request,"index.html",name)
+def alertshandling(request):
+        name = {'sample_file': "alertshandling.html",'sample_video': "https://www.youtube.com/embed/f4qSxXWmRIA" }
         return render(request,"index.html",name)

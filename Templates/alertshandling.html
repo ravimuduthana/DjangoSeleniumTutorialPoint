@@ -1,0 +1,25 @@
+{% block content1 %}
+{% load static %}
+<link href="{% static 'css/code.css' %}" rel="stylesheet">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/default.min.css">
+<div class="alertshandling">
+    <h1 class="card-title">Alerts Handling Using Selenium</h1>
+    <p class="card-text">
+    Alerts are small box windows or popup boxes which display the messages/notifications and notify the user with some information or seeking some permission on certain kinds of operations.<br>
+    Additionally, Alerts can bes used for warning purposes. Sometimes, the user can enter a few details in the alert box as well.
+    For Example, The alert box displayed below requires an action from the user to press OK or press Cancel or expect input from the user.
+    </p>
+    <a href="{% static 'images/alertbox.png' %}">
+    <img src="{% static 'images/alertbox.png' %}" class="card-img-top" alt="alertbox">   
+    </a> 
+</div>
+<script src="{% static 'js/code.js' %}"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.8/clipboard.min.js"></script>
+<script>
+    hljs.initHighlighting.called = false;
+    hljs.initHighlighting();
+    new ClipboardJS(".copy-button");
+
+</script>
+{% endblock %}

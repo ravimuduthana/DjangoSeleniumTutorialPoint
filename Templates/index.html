@@ -22,21 +22,33 @@
         <div class="card indexpagesidebarcard">
           <div class="card-body">
                   <div class="card-header indexsidebar">
-                    Selenium Java
+                    <select class="form-select" aria-label="Default select example" onchange="location = this.options[this.selectedIndex].value;">
+                      <option selected>SeleniumJava</option>
+                      <option value="{% url 'webdrivermanager' %}">TestNG</option>
+                      <option value="{% url 'webdrivermanager' %}">Cucumber</option>
+                      <option value="{% url 'webdrivermanager' %}">Reporting</option>
+                    </select>
                   </div>
                   <ul class="list-group list-group-flush indexpageul">
                     <li><a href="{% url 'gettooltiptext' %}" class="list-group-item"><i class="fas fa-play"></i> Get Tooltip Text Using Selenium WebDriver</a></li>
                     <li><a href="{% url 'webdrivermanager' %}" class="list-group-item"><i class="fas fa-play"></i> What is WebDriverManager?</a></li>
-                    <li><a href="#" class="list-group-item"><i class="fas fa-play"></i> Alerts Handling Using Selenium WebDriver</a></li>
+                    <li><a href="{% url 'alertshandling' %}" class="list-group-item"><i class="fas fa-play"></i> Alerts Handling Using Selenium WebDriver</a></li>
                     <li><a href="#" class="list-group-item"><i class="fas fa-play"></i> Working with Excel Using Selenium WebDriver</a></li>
                     <li><a href="#" class="list-group-item"><i class="fas fa-play"></i> Working Wtih DB Using Selenium WebDriver</a></li>
                     <li><a href="#" class="list-group-item"><i class="fas fa-play"></i> Working With API Using Selenium Webdriver</a></li>
-                    <li><a href="#" class="list-group-item"><i class="fas fa-play"></i> Working With API Using Selenium Webdriver</a></li>
-                    <li><a href="#" class="list-group-item"><i class="fas fa-play"></i> Working With API Using Selenium Webdriver</a></li>
-                    <li><a href="#" class="list-group-item"><i class="fas fa-play"></i> Working With API Using Selenium Webdriver</a></li>
-                    <li><a href="#" class="list-group-item"><i class="fas fa-play"></i> Working With API Using Selenium Webdriver</a></li>
-                    <li><a href="#" class="list-group-item"><i class="fas fa-play"></i> Working With API Using Selenium Webdriver</a></li>
-                    <li><a href="#" class="list-group-item"><i class="fas fa-play"></i> Working With API Using Selenium Webdriver</a></li>
+                    <li><a href="#" class="list-group-item"><i class="fas fa-play"></i> Environment Setup</a></li>
+                    <li><a href="#" class="list-group-item"><i class="fas fa-play"></i> Create First Selenium Maven Project</a></li>
+                    <li><a href="#" class="list-group-item"><i class="fas fa-play"></i> OR Identification</a></li>
+                    <li><a href="#" class="list-group-item"><i class="fas fa-play"></i> OR X-Path </a></li>
+                    <li><a href="#" class="list-group-item"><i class="fas fa-play"></i> Json File Automation POC</a></li>
+                    <li><a href="#" class="list-group-item"><i class="fas fa-play"></i> Working with Tables</a></li>
+                    <li><a href="#" class="list-group-item"><i class="fas fa-play"></i> Working with Frames</a></li>
+                    <li><a href="#" class="list-group-item"><i class="fas fa-play"></i> Working with Window Handlers</a></li>
+                    <li><a href="#" class="list-group-item"><i class="fas fa-play"></i> Reporting</a></li>
+                    <li><a href="#" class="list-group-item"><i class="fas fa-play"></i> Extent Reporting</a></li>
+                    <li><a href="#" class="list-group-item"><i class="fas fa-play"></i> TestNG</a></li>
+                    <li><a href="#" class="list-group-item"><i class="fas fa-play"></i> BDD</a></li> 
+                    <li><a href="#" class="list-group-item"><i class="fas fa-play"></i> Cucumber</a></li> 
                   </ul>                    
 </div>
 </div>
@@ -44,7 +56,7 @@
 </div> 
 <div class="row">
 <div class="col-md-12 maincontent">
-  <div class="card">
+  <div class="card maincontentcard style="width: 18rem;">
     <div class="card-body">
         <ul class="list-unstyled ps-0">
           <li class="mb-1">
@@ -66,8 +78,11 @@
 </div>
 </div>
   
-
-    
+</div>
+<div class="row">
+  <div class="col-md-12 maincontent">
+    <div class="card maincontentcard">
+      <div class="card-body"> 
 <!-- AddToAny BEGIN -->
 <div class="a2a_kit a2a_kit_size_32 a2a_default_style">
   <a class="a2a_dd" href="https://www.addtoany.com/share"></a>
@@ -77,10 +92,21 @@
   </div>
   <script async src="https://static.addtoany.com/menu/page.js"></script>
   <!-- AddToAny END -->
-
-<div id="disqus_thread"></div>
-
 </div>
+</div>
+</div>
+</div>
+
+<div class="row">
+  <div class="col-md-12 maincontent">
+    <div class="card maincontentcard">
+      <div class="card-body">
+<div id="disqus_thread"></div>
+</div>
+</div>
+</div>
+</div>
+
 <script>
     /**
     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
