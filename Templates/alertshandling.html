@@ -6,12 +6,201 @@
     <h1 class="card-title">Alerts Handling Using Selenium</h1>
     <p class="card-text">
     Alerts are small box windows or popup boxes which display the messages/notifications and notify the user with some information or seeking some permission on certain kinds of operations.<br>
-    Additionally, Alerts can bes used for warning purposes. Sometimes, the user can enter a few details in the alert box as well.
-    For Example, The alert box displayed below requires an action from the user to press OK or press Cancel or expect input from the user.
-    </p>
-    <a href="{% static 'images/alertbox.png' %}">
-    <img src="{% static 'images/alertbox.png' %}" class="card-img-top" alt="alertbox">   
+    Alerts will be used for the following purposes.<br>
+</p>
+    <h5 class="card-subtitle">1) Alerts can be used for warning purposes.The alert box displayed below notifies user or warns user that username text field should not accept integers<br></h5>
+    
+    <br>
+    <a href="{% static 'images/alertwarning.png' %}" class="card-img-top" alt="alertbox">
+        <img src="{% static 'images/alertwarning.png' %}" class="card-img-top" alt="alertbox">   
     </a> 
+    <br>
+    <br>
+    <h5 class="card-subtitle">2) Alerts can be used to get user input from a web page.The alert box displayed below expects user to enter location and then it will be filled in the webform<br></h5>
+    <br>
+   
+    <a href="{% static 'images/alertprompt.png' %}" class="card-img-top" alt="alertbox">
+        <img src="{% static 'images/alertprompt.png' %}" class="card-img-top" alt="alertbox">   
+    </a> 
+    <br>
+    <br>
+    <h5 class="card-subtitle">3) Alerts can be used to give confirmation to the user to perform an operation.The alert box displayed below to get confirmation from user on page submission<br></h5>
+    <br>
+   
+    <a href="{% static 'images/alertconfirmation.png' %}" class="card-img-top" alt="alertbox">
+        <img src="{% static 'images/alertconfirmation.png' %}" class="card-img-top" alt="alertbox">   
+    </a>
+    <br><br>
+    <h5 class="card-subtitle">Handling Alerts in Selenium WebDriver<br></h5>
+    <p class="card-text">
+        For handling alerts on web page, Selenium provides four methods:<br>
+
+        <h5 class="card-subtitle">1. accept()</h5>To accept the alert on web page
+        <div class="codecontainer">                
+            <div class="code-wrapper">    
+            <pre>
+              <code id="code2">
+                driver.switchTo().alert().accept();
+    </code>
+</pre>
+<button class="copy-button" id="copy-button" data-clipboard-target="#code2"><i class="fas fa-copy"></i></button> 
+</div>
+</div>
+        <h5 class="card-subtitle">2. dismiss()</h5> To dismiss the alert on web page<br>
+        <div class="codecontainer">                
+            <div class="code-wrapper">    
+            <pre>
+              <code id="code2">
+                driver.switchTo().alert().dismiss();
+    </code>
+</pre>
+<button class="copy-button" id="copy-button" data-clipboard-target="#code2"><i class="fas fa-copy"></i></button> 
+</div>
+</div>
+        <h5 class="card-subtitle">3. getText()</h5> To get the text of the alert on web page<br>
+        <div class="codecontainer">                
+            <div class="code-wrapper">    
+            <pre>
+              <code id="code2">
+                driver.switchTo().alert().getText();
+    </code>
+</pre>
+<button class="copy-button" id="copy-button" data-clipboard-target="#code2"><i class="fas fa-copy"></i></button> 
+</div>
+</div>
+        <h5 class="card-subtitle">4. sendKeys()</h5> To send some text to the alert on web page<br>
+        <div class="codecontainer">                
+            <div class="code-wrapper">    
+            <pre>
+              <code id="code2">
+                driver.switchTo().alert().sendKeys("Text");
+    </code>
+</pre>
+<button class="copy-button" id="copy-button" data-clipboard-target="#code2"><i class="fas fa-copy"></i></button> 
+</div>
+</div>
+
+<h5 class="card-subtitle">Alerts handling Script </h5><br>
+        <div class="codecontainer">                
+            <div class="code-wrapper">    
+            <pre>
+              <code id="code2">
+                package Scripts;
+
+                import java.sql.Driver;
+                
+                import org.openqa.selenium.By;
+                import org.openqa.selenium.WebDriver;
+                import org.openqa.selenium.chrome.ChromeDriver;
+                import org.openqa.selenium.support.ui.ExpectedCondition;
+                import org.openqa.selenium.support.ui.ExpectedConditions;
+                import org.openqa.selenium.support.ui.WebDriverWait;
+                
+                import io.github.bonigarcia.wdm.WebDriverManager;
+                
+                public class alertshandling {
+                    
+                    
+                    public static void main(String[] args) throws InterruptedException {
+                                // TODO Auto-generated method stub
+                                //With webdriver manager,initiating the driver and opening the website
+                        
+                                ChromeDriver driver;
+                                WebDriverManager.chromedriver().setup();
+                                driver=new ChromeDriver();
+                                driver.get("http://www.testautomationpoint.com/alertstestpage");
+                                driver.manage().window().maximize();
+                                Thread.sleep(5000);
+                                
+                                //Enter username and password and click submit button
+                                
+                                driver.findElement(By.id("exampleusername")).sendKeys("55");
+                                driver.findElement(By.id("exampleInputPassword")).sendKeys("text");
+                                driver.findElement(By.xpath("//*[@id=\"mytextbox\"]/form/button")).click();
+                                
+                                //synchronise and wait until alert present
+                                
+                                Thread.sleep(5000);
+                                WebDriverWait w=new WebDriverWait(driver,30);
+                                if(w.until(ExpectedConditions.alertIsPresent())==null)
+                                {
+                                    System.out.println("Alert not present");
+                                                        
+                                }
+                                else
+                                {
+                                    //get text of the alert
+                                    
+                                    String str=driver.switchTo().alert().getText();
+                                    System.out.println(str);
+                                    
+                                    //accept alert
+                                    
+                                    driver.switchTo().alert().accept();	
+                                    Thread.sleep(5000);
+                                    
+                                    //enter username and location
+                                    driver.findElement(By.id("exampleusername")).clear();
+                                    driver.findElement(By.id("exampleusername")).sendKeys("ravi");
+                                    Thread.sleep(5000);
+                                    driver.findElement(By.id("location")).click();
+                                    
+                                    //synchronise and wait until alert present
+                                    
+                                    Thread.sleep(5000);
+                                    if(w.until(ExpectedConditions.alertIsPresent())==null)
+                                    {
+                                        System.out.println("Alert not present");
+                                                            
+                                    }
+                                    else
+                                    {
+                                        //get text of the alert
+                                        
+                                        String str1=driver.switchTo().alert().getText();
+                                        System.out.println(str1);	
+                                        
+                                        //send text to alert
+                                        
+                                        driver.switchTo().alert().sendKeys("Hyderabad");
+                                        Thread.sleep(5000);
+                                        
+                                        //accept alert
+                                        
+                                        driver.switchTo().alert().accept();
+                                        driver.findElement(By.xpath("//*[@id=\"mytextbox\"]/form/button")).click();
+                                        
+                                        //synchronise and wait until alert present
+                                        
+                                        Thread.sleep(5000);
+                                        if(w.until(ExpectedConditions.alertIsPresent())==null)
+                                        {
+                                            System.out.println("Alert not present");
+                                                                
+                                        }
+                                        else
+                                        {
+                                            //dismiss alert
+                                            
+                                            driver.switchTo().alert().dismiss();
+                                        }
+                                        
+                                    }
+                                }
+                                driver.close();
+                                
+                                
+                
+                    }
+                
+                }
+                
+    </code>
+</pre>
+<button class="copy-button" id="copy-button" data-clipboard-target="#code2"><i class="fas fa-copy"></i></button> 
+</div>
+</div>
+    </p>
 </div>
 <script src="{% static 'js/code.js' %}"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/highlight.min.js"></script>
