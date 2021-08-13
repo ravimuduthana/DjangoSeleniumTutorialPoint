@@ -1,34 +1,64 @@
 {% block content %}
 {% include 'TestPage.html' %}
-
-   
+     
 
 <div class="col-sm-9 testpagemaincontent">
-    <div class="card">
-      <div class="card-body">   
-      <div id="mytextbox">
-          <strong>Alerts</strong>
-          <p>Click the following button to see the result: </p>      
-          <form>
-             <input type = "button" value = "Click Me" onclick = "getValue();" />
-             <span id="result" class="text-success">
+  <div class="card">
+    <div class="card-body">   
+    <div id="mytextbox">
+      <form name="Form1"  onsubmit="return validateForm()" required>
+    <div class="form-group" >
+        <label for="exampleusername">Username</label>
+        <input type="email1" class="form-control" id="exampleusername" aria-describedby="usernameHelp" placeholder="Enter Username" required>
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword">Password</label>
+        <input type="password" class="form-control" id="exampleInputPassword" placeholder="Password" required>
+      </div>
+      <div class="form-group">
+        <label for="exampleinputlocation" aria-required="true">Location</label><br><br>
+          <span id="filllocation">Fill Location</span><br><br>
+        <button type="button" id="location" class="btn btn-primary" onclick="fn1()">Click to Enter Location</button>
+      </div>
+     
+      <br>
+      <button type="submit" class="btn btn-primary">Submit</button>
+      <br>
+     
 
-             </span>
-          </form> 
-          
+        </form>
+        
+
+</div>
+</div>
+</div>
+</div>
+<script>
+  function validateForm() {
+    var x = document.forms["Form1"]["exampleusername"].value;
+    // Regular expression
+    const regex = /\d/;
+    if (regex.test(x)) {
+      alert("Name should not have integers");
+      return false;
+    }
+      else
+      {
+        confirm("Page is being submitted,Please Press OK or Cancel");
+      }
+    }
   
-  </div>
-  </div>
-  </div>
-  </div>
 
-      <script type = "text/javascript">
-    
-           function getValue() {
-              var retVal = prompt("Enter your name : ", "your name here");
-              var element=document.getElementById('result');
-              element.innerText=" You have entered "+retVal;
-           }
-      
-     </script>    
+   function fn1()
+   {
+     var x=prompt("Enter your location","India");
+     document.getElementById("filllocation").innerText="Location Entered "+x;
+   }
+  
+</script>
 {% endblock %}
+
+
+
+
+  
