@@ -38,5 +38,5 @@ def webdrivermanager(request):
         name = {'sample_file': "webdrivermanager.html",'sample_video': "https://www.youtube.com/embed/f4qSxXWmRIA" }
         return render(request,"index.html",name)
 def alertshandling(request):
-        name = {'sample_file': "alertshandling.html",'sample_video': "https://www.youtube.com/embed/f4qSxXWmRIA" }
+        name = {'sample_file': "alertshandling.html",'sample_video': "https://www.youtube.com/embed/6SyYCukzMG0" }
         return render(request,"index.html",name)

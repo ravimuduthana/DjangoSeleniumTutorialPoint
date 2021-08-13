@@ -6,8 +6,12 @@
 }
 .code-wrapper pre{
    
-    padding: 8px 20px;
     border-radius: 0 0 5px 5px;
+  
+}
+.code-wrapper code{
+   
+    border: 1px solid gray;
 }
 #copy-button{
     position: absolute;
