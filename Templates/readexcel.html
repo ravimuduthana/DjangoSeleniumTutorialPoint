@@ -1,0 +1,188 @@
+{% block content1 %}
+{% load static %}
+<link href="{% static 'css/code.css' %}" rel="stylesheet">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/default.min.css">
+<div class="readexcel">
+    <h1 class="card-title">Read From Excel Using Apache POI</h1>
+    <p class="card-text">
+        Let us consider sample excel sheet as shown below and will see how to read data from this file.
+    </p>
+    <a href="{% static 'images/readexcel.png' %}">
+        <img src="{% static 'images/readexcel.png' %}" class="card-img-top" alt="readexcel">
+        
+    </a><br><br>
+    <p class="card-text">
+        <h5>1. The first step is to obtain the Excel Workbook based upon its location on the computer</h5><br> You can create an object of the workbook by referring to the FileInputStream object that points to the excel file. <br>We can do it as shown below using the HSSFWorkbook Class. If you are using MS-Office versions 97–2003 or XSSFWorkbook Class if MS-Office versions 2007 or later. <br>In the below line, we use XSSFWorkbook
+    </p>
+    <div class="codecontainer">               
+        <div class="code-wrapper">    
+        <pre>
+          <code id="code1">
+            File file =    new File("..\\TestData\\TestData.xlsx");
+            FileInputStream inputStream = new FileInputStream(file);
+            XSSFWorkbook wb=new HSSFWorkbook(inputStream);
+        </code>
+            
+    </pre>   
+    <button id="copy-button" class="copy-button" data-clipboard-target="#code1"><i class="fas fa-copy"></i></button> 
+      </div>
+    </div>
+  <br>
+  <p class="card-text">
+    <h5>2. The next step is to create a Sheet in the Workbook</h5><br>We can do it as below using the name of the sheet in the getSheet (String sheetName) method. Here, <strong>"Data"</strong> is the name of the sheet in the Excel
+    </p>
+    <div class="codecontainer">               
+        <div class="code-wrapper">    
+        <pre>
+          <code id="code2">
+            XSSFSheet sheet=wb.getSheet("DATA");
+        </code>
+            
+    </pre>   
+    <button id="copy-button" class="copy-button" data-clipboard-target="#code2"><i class="fas fa-copy"></i></button> 
+      </div>
+    </div>
+    <br>
+    <p class="card-text">
+        You can also create a sheet based upon the index using the <strong>getSheetAt (int index) </strong>method as shown below
+        </p>
+        <div class="codecontainer">               
+            <div class="code-wrapper">    
+            <pre>
+              <code id="code3">
+                XSSFSheet sheet1=wb.getSheetAt(1);
+            </code>
+                
+        </pre>   
+        <button id="copy-button" class="copy-button" data-clipboard-target="#code3"><i class="fas fa-copy"></i></button> 
+          </div>
+        </div>
+
+        <p class="card-text">
+            <h5>3. After the sheet creation, Obtain Row of the sheet</h5><br>We can obtain the row of the sheet, which we can retrieve using the <strong>getRow (int rowIndex)</strong> method of the sheet object
+            </p>
+            <div class="codecontainer">               
+                <div class="code-wrapper">    
+                <pre>
+                  <code id="code4">
+                    XSSFRow row1=sheet.getRow(1);
+                </code>
+                    
+            </pre>   
+            <button id="copy-button" class="copy-button" data-clipboard-target="#code4"><i class="fas fa-copy"></i></button> 
+              </div>
+            </div>
+            <p class="card-text">
+                <h5>4. Once you have got the row, Obtain Cell</h5><br>You can get the cell of the row using the <strong>getCell (int index)</strong> method of the HSSFRow class
+                </p>
+                <div class="codecontainer">               
+                    <div class="code-wrapper">    
+                    <pre>
+                      <code id="code5">
+                        XSSFCell cell=sheet.getRow(1).getCell(1)
+                    </code>
+                        
+                </pre>   
+                <button id="copy-button" class="copy-button" data-clipboard-target="#code5"><i class="fas fa-copy"></i></button> 
+                  </div>
+                </div>
+
+                <p class="card-text">
+                     <h5>5. After you obtain the cell that contains the data, you can read the data in different formats </h5><br>Read data like String, Date, Number using the different methods which are based upon the format of the cell you specify in the excel sheet.<br><br>
+<strong>String - getStringCellValue()</strong> - It can be used to read UserName of the user from Excel<br><br>
+<strong>Number - getNumericCellValue()</strong> - It can be used to read the mobile number of the user<br><br>
+<strong>Date - getDateCellValue()</strong> - It can be used to read the Date of Birth of the user<br><br>
+<strong>Note: Index starts from zero for both the row and cell.</strong><br><br>
+                    </p>
+                    <div class="codecontainer">               
+                        <div class="code-wrapper">    
+                        <pre>
+                          <code id="code6">
+                            String username= cell.getStringCellValue();
+                            int Mobilenumber=(int) cell.getNumericCellValue();
+                            Date userlogindate=cell.getDateCellValue();
+                        </code>
+                            
+                    </pre>   
+                    <button id="copy-button" class="copy-button" data-clipboard-target="#code6"><i class="fas fa-copy"></i></button> 
+                      </div>
+                    </div>
+
+                    <p class="card-text">
+                      <h5>Read data from Excel script</h5>
+                     </p>
+                     <div class="codecontainer">               
+                         <div class="code-wrapper">    
+                         <pre>
+                           <code id="code7">
+package Scripts;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.Date;
+import org.apache.poi.xssf.usermodel.XSSFCell;
+import org.apache.poi.xssf.usermodel.XSSFRow;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+public class readexcel {
+
+public static void main(String[] args) throws IOException {
+  // TODO Auto-generated method stub
+
+  //Create Input steam 
+      File file =    new File("..\\data.xlsx");
+      FileInputStream inputStream = new FileInputStream(file);
+      XSSFWorkbook wb=new XSSFWorkbook(inputStream);
+      
+      //create runtime sheet 
+      XSSFSheet sheet=wb.getSheet("Data");
+      
+      //get row
+      XSSFRow row1=sheet.getRow(1);
+      
+      //get row cell
+      XSSFCell cell=sheet.getRow(1).getCell(1);
+      XSSFCell cell1=sheet.getRow(1).getCell(2);
+      XSSFCell cell2=sheet.getRow(1).getCell(3);
+      
+      //get cell data
+      String username= cell.getStringCellValue();
+      int Mobilenumber=(int) cell1.getNumericCellValue();
+      Date userlogindate=cell2.getDateCellValue();
+      
+      //print
+      System.out.println(username);
+      System.out.println(Mobilenumber);
+      System.out.println(userlogindate);
+      
+      //close the streams
+      wb.close();
+      inputStream.close();
+   
+}
+
+}
+
+                              
+                         </code>
+                             
+                     </pre>   
+                     <button id="copy-button" class="copy-button" data-clipboard-target="#code7"><i class="fas fa-copy"></i></button> 
+                       </div>
+                     </div>
+                    
+    
+    
+</div>
+<script src="{% static 'js/code.js' %}"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.8/clipboard.min.js"></script>
+<script>
+    hljs.initHighlighting.called = false;
+    hljs.initHighlighting();
+    new ClipboardJS(".copy-button");
+
+</script>
+{% endblock %}

@@ -1,0 +1,131 @@
+{% block content1 %}
+{% load static %}
+<link href="{% static 'css/code.css' %}" rel="stylesheet">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/default.min.css">
+<div class="readexcel">
+    <h1 class="card-title">Write Into Excel Using Apache POI</h1>
+    <p class="card-text">
+      <h5>1. Write into excel </h5><br>If we  want to write data into excel after execution completed in the same Row of the input,we can achieve as below:<br>
+     </p>
+     <div class="codecontainer">               
+         <div class="code-wrapper">    
+         <pre>
+           <code id="code1">
+    XSSFCell cell = sheet.getRow(1).createCell(4);          
+    cell.setCellValue("TestWrite");
+            
+    //To write into Excel File
+    FileOutputStream outputStream = new FileOutputStream("&lt;filepath&gt;");
+    wb.write(outputStream);
+    
+         </code>
+             
+     </pre>   
+     <button id="copy-button" class="copy-button" data-clipboard-target="#code1"><i class="fas fa-copy"></i></button> 
+       </div>
+     </div>
+
+     <p class="card-text">
+      <strong>2. Write into excel in new Row </strong><br><br>Suppose,if you want to update the excel with new data in next row,you can achieve with the following code sample<br>
+      </p>
+     <div class="codecontainer">               
+         <div class="code-wrapper">    
+         <pre>
+           <code id="code2">
+              XSSFRow row=sheet.createRow(4);
+            
+              row.createCell(0).setCellValue("4");
+              row.createCell(1).setCellValue("riana");
+              row.createCell(2).setCellValue("6666454545");
+              row.createCell(3).setCellValue("7-7-2021");
+    
+         </code>
+             
+     </pre>   
+     <button id="copy-button" class="copy-button" data-clipboard-target="#code2"><i class="fas fa-copy"></i></button> 
+       </div>
+     </div>
+
+
+                       <p class="card-text">
+                        <h5>Write  data into Excel script</h5>
+                       </p>
+                       <div class="codecontainer">               
+                           <div class="code-wrapper">    
+                           <pre>
+                             <code id="code3">
+                                package Scripts;
+
+                                import java.io.File;
+                                import java.io.FileInputStream;
+                                import java.io.FileNotFoundException;
+                                import java.io.FileOutputStream;
+                                import java.io.IOException;
+                                import java.util.Date;
+                                import org.apache.poi.xssf.usermodel.XSSFCell;
+                                import org.apache.poi.xssf.usermodel.XSSFRow;
+                                import org.apache.poi.xssf.usermodel.XSSFSheet;
+                                import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+                                
+                                public class readexcel {
+                                
+                                    public static void main(String[] args) throws IOException {
+                                        // TODO Auto-generated method stub
+                                
+                                        //Create Input steam 
+                                        File file =    new File("..\\data.xlsx");
+                                        FileInputStream inputStream = new FileInputStream(file);
+                                        XSSFWorkbook wb=new XSSFWorkbook(inputStream);
+                                        
+                                        //create runtime sheet 
+                                        XSSFSheet sheet=wb.getSheet("Data");
+                                        
+                                        //get row
+                                        XSSFRow row1=sheet.getRow(1);
+                                        
+                                        //create row cell
+                                        XSSFCell cell=sheet.getRow(1).createCell(4);
+                                        cell.setCellValue("testwrite");
+                                       
+                                       //Create new row in excel sheet
+                                        XSSFRow row=sheet.createRow(4);
+                                        
+                                        row.createCell(0).setCellValue("4");
+                                        row.createCell(1).setCellValue("riana");
+                                        row.createCell(2).setCellValue("6666454545");
+                                        row.createCell(3).setCellValue("7-7-2021");
+                                        
+                                      //To write into Excel File
+                                        FileOutputStream outputStream = new FileOutputStream("C:\\\\DjangoProjects\\\\DjangoSeleniumTutorialPoint\\\\static\\\\images\\\\data.xlsx");
+                                        wb.write(outputStream);
+                                        
+                                        
+                                        //close the streams
+                                        wb.close();
+                                        inputStream.close();
+                                        outputStream.close();
+                                     
+                                    }
+                                
+                                }
+                                
+                                
+                           </code>
+                               
+                       </pre>   
+                       <button id="copy-button" class="copy-button" data-clipboard-target="#code3"><i class="fas fa-copy"></i></button> 
+                         </div>
+                       </div>
+    
+    
+</div>
+<script src="{% static 'js/code.js' %}"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.8/clipboard.min.js"></script>
+<script>
+    hljs.initHighlighting.called = false;
+    hljs.initHighlighting();
+    new ClipboardJS(".copy-button");
+
+</script>
+{% endblock %}

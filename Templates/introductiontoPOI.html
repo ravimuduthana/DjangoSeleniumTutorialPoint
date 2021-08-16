@@ -1,0 +1,79 @@
+{% block content1 %}
+{% load static %}
+<link href="{% static 'css/code.css' %}" rel="stylesheet">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/default.min.css">
+<div class="introductiontoPOI">
+    <h1 class="card-title">Introduction To Apache POI</h1>
+    <p class="card-text">
+        Apache POI is an API written in java which helps in manipulating Microsoft documents excel sheets, power-point, and word files.In Selenium it is a widely used API for data driven testing.
+        Users can easily create, modify or read/write into files. POI stands for “Poor Obfuscation Implementation"<br><br>
+        
+        Apache POI provides wide support for data driven testing using excelsheets,let us see more details.
+    </p>
+    <h5 class="card-subtitle">Installation</h5>
+    <div class="codecontainer">                
+        <div class="code-wrapper">    
+        <pre>
+          <code id="code1">
+            <textarea id="maven-a" readonly="true" rows="7" cols="40" style="width: 100%" class="snippet">&lt;!-- https://mvnrepository.com/artifact/org.apache.poi/poi --&gt;
+                &lt;dependency&gt;
+                    &lt;groupId&gt;org.apache.poi&lt;/groupId&gt;
+                    &lt;artifactId&gt;poi&lt;/artifactId&gt;
+                    &lt;version&gt;5.0.0&lt;/version&gt;
+                &lt;/dependency&gt;
+                </textarea>
+        </code>
+    </pre>
+    <button class="copy-button" id="copy-button" data-clipboard-target="#code1"><i class="fas fa-copy"></i></button> 
+    </div>
+    </div>
+    <br>
+    <h5 class="card-subtitle">Interfaces & Classes</h5><br>
+    <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Interface</th>
+            <th scope="col" style="width: 60%;">Description</th>
+            <th scope="col">Class</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td><strong>Workbook</strong></td>
+            <td>A workbook represents a Microsoft Excel file. It can be used for creating and maintaining the spreadsheet. A workbook may contain many sheets</td>
+            <td><strong>HSSFWorkbook</strong>- Is a class representation of XLS file<br><strong>XSSFWorkbook</strong>- Is a class representation of XLSX file</td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td><strong>Sheet</strong></td>
+            <td>A sheet refers to a page in a Microsoft Excel file that contains the number of rows and columns</td>
+            <td><strong>HSSFSheet</strong>-Is a class representation of XLS file<br><strong>XSSFSheet</strong>-Is a class representation of XLSX file</td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td><strong>Row</strong></td>
+            <td>A row represents a collection of cells, which is used to represent a row in the spreadsheet.</td>
+            <td><strong>HSSFRow</strong>-Is a class representation of XLS file<br><strong>XSSFRow</strong>-Is a class representation of XLSX file</td>
+          </tr>
+          <tr>
+            <th scope="row">4</th>
+            <td><strong>Cell</strong></td>
+            <td>A cell is indicated by a row and column combination. Data entered by a user is stored in a cell. Data can be of the type such as string, numeric value, or formula.</td>
+            <td><strong>HSSFCell</strong>-Is a class representation of XLS file<br><strong>XSSFCell</strong>-Is a class representation of XLSX file</td>
+          </tr>
+        </tbody>
+      </table>
+    
+</div>
+<script src="{% static 'js/code.js' %}"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.8/clipboard.min.js"></script>
+<script>
+    hljs.initHighlighting.called = false;
+    hljs.initHighlighting();
+    new ClipboardJS(".copy-button");
+
+</script>
+{% endblock %}

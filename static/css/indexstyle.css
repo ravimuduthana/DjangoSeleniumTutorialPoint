@@ -2,12 +2,9 @@
 {
  overflow-y:scroll;
  max-height: 330px;
- background-color: red;
+ 
 }
-.indexpageul>li{
-    color: red;
-    background-color: red;
-}
+
 .getooltipvideo
 {
 width: 100%;
@@ -18,7 +15,7 @@ height: 400px;
 width: 60%;
 height: 400px;
 }
-.indexsidebar
+.indexsidebarheader
 {
 height: 70px;
 text-align: center;
@@ -26,14 +23,16 @@ padding-top: 20px;
 border-style: solid 2px;
 border-color: white;
 }
-
-.indexpageul>.list-group-item{
-    background-color: #563d7c;
-}
 .socialicongithub{
     padding-right: 20px;
 }
 .maincontentcard{
-    margin-left: 10%;
-    margin-right: 10%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+.indexpagevideocard{
+    margin-left: 5%;
+}
+.indexpagesidebarcard{
+    margin-right: 5%;
 }

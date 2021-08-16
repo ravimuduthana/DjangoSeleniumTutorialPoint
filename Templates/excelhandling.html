@@ -1,0 +1,140 @@
+{% extends 'header.html' %}
+{% block content %}
+{% load static %}
+
+<link href="{% static 'css/indexstyle.css' %}" rel="stylesheet"/>
+<!-- Custom styles for this template -->
+<link href="{% static 'css/sidebars.css' %}" rel="stylesheet">
+<script src="https://kit.fontawesome.com/56990d70b4.js" crossorigin="anonymous"></script>
+ 
+    <div class="row">
+      <div class="col-md-8 indexpagevideo">
+        <div class="card indexpagevideocard">
+          <div class="card-body">
+            
+             <iframe class="getooltipvideo" src={{sample_video}} frameborder="0" allowfullscreen></iframe> 
+            
+
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 indexpagesidebarcol" >
+        <div class="card indexpagesidebarcard">
+          <div class="card-body">
+                  <div class="card-header indexsidebarheader">
+                    <select class="form-select" aria-label="Default select example" onchange="location = this.options[this.selectedIndex].value;">
+                      <option selected>Excel</option>
+                      <option value="{% url 'index' %}">SeleniumJava</option>
+                      <option value="{% url 'index' %}">TestNG</option>
+                      <option value="{% url 'index' %}">Cucumber</option>
+                      <option value="{% url 'index' %}">Reporting</option>                     
+                      <option value="{% url 'index' %}">API</option>
+                      <option value="{% url 'index' %}">DB</option>
+                    </select>
+                  </div>
+                  <ul class="list-group list-group-flush indexpageul">
+                    <li id="playicontooltip"><a href="{% url 'introductiontoPOI' %}" class="list-group-item"><i class="fas fa-play"></i>Introduction to Apache POI</a></li>
+                    <li><a href="{% url 'readexcel' %}" class="list-group-item"><i class="fas fa-play"></i>Read From Excel Using Selenium WebDriver</a></li>
+                    <li><a href="{% url 'writeexcel' %}" class="list-group-item"><i class="fas fa-play"></i>Write Into Excel Using Selenium WebDriver</a></li>
+                  </ul>                    
+</div>
+</div>
+</div>
+</div> 
+
+<div class="row">
+    <div class="col-md-12 maincontent">
+      <div class="card maincontentcard">
+        <div class="card-body">
+            <ul class="list-unstyled ps-0">
+              <li class="mb-1">
+                <button id="sidebar" class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="true">
+                  Video Transcript
+                </button>
+                <div class="collapse show" id="home-collapse">
+                  <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                    <div class="maincontentdata">
+                     
+                        
+                        {% include sample_file %}
+                        
+                        
+                      
+        </div>
+        </div>   
+    </div>
+    </div>
+    </div>
+      
+    </div>
+    <div class="row">
+      <div class="col-md-12 maincontent">
+        <div class="card maincontentcard">
+          <div class="card-body"> 
+    <!-- AddToAny BEGIN -->
+    <div class="a2a_kit a2a_kit_size_32 a2a_default_style">
+      <a class="a2a_dd" href="https://www.addtoany.com/share"></a>
+      <a class="a2a_button_facebook"></a>
+      <a class="a2a_button_twitter"></a>
+      <a class="a2a_button_email"></a>
+      </div>
+      <script async src="https://static.addtoany.com/menu/page.js"></script>
+      <!-- AddToAny END -->
+    </div>
+    </div>
+    </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-md-12 maincontent">
+        <div class="card maincontentcard">
+          <div class="card-body">
+    <div id="disqus_thread"></div>
+    </div>
+    </div>
+    </div>
+    </div>
+    
+    <script>
+        /**
+        *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+        *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+        /*
+        var disqus_config = function () {
+        this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        };
+        */
+        (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = 'https://http-www-testautomationpoint-com.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
+          <script src="{% static 'js/sidebars.js' %}"></script>
+          <script src="{% static 'js/index.js' %}"></script>
+          <script>
+            $(document).ready(function () {
+          
+              $("#sidebar").mCustomScrollbar({
+                   theme: "minimal"
+              });
+          
+              $('#sidebarCollapse').on('click', function () {
+                  // open or close navbar
+                  $('#sidebar').toggleClass('active');
+                  // close dropdowns
+                  $('.collapse.in').toggleClass('in');
+                  // and also adjust aria-expanded attributes we use for the open/closed arrows
+                  // in our CSS
+                  $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+              });     
+          });
+          </script>
+          <script id="dsq-count-scr" src="//http-www-testautomationpoint-com.disqus.com/count.js" async></script>
+      {% endblock %} 
+      
+

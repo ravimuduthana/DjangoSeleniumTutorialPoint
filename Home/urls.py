@@ -18,5 +18,9 @@ urlpatterns =   [
     path('webdrivermanager',views.webdrivermanager,name='webdrivermanager'),
     path('alertstestpage',views.alertstestpage,name='alertstestpage'),
     path('alertshandling',views.alertshandling,name='alertshandling'),
+    path('excelhandling',views.excelhandling,name='excelhandling'),
+    path('introductiontoPOI',views.introductiontoPOI,name='introductiontoPOI'),
+    path('readexcel',views.readexcel,name='readexcel'),
+    path('writeexcel',views.writeexcel,name='writeexcel'),
   
 ]
