@@ -47,8 +47,10 @@ def introductiontoPOI(request):
         name = {'sample_file': "introductiontoPOI.html",'sample_video': "https://www.youtube.com/embed/CbeR1c6w2U8" }
         return render(request,"excelhandling.html",name)
 def readexcel(request):
-        name = {'sample_file': "readexcel.html",'sample_video': "https://www.youtube.com/embed/6SyYCukzMG0" }
+        name = {'sample_file': "readexcel.html",'sample_video': "https://www.youtube.com/embed/d8JZISxS0Mw" }
         return render(request,"excelhandling.html",name)
 def writeexcel(request):
-        name = {'sample_file': "writeexcel.html",'sample_video': "https://www.youtube.com/embed/6SyYCukzMG0" }
+        name = {'sample_file': "writeexcel.html",'sample_video': "https://www.youtube.com/embed/d8JZISxS0Mw" }
         return render(request,"excelhandling.html",name)
+def iframetestpage(request):
+        return render(request,"iframe.html")

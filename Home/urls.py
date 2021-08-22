@@ -22,5 +22,6 @@ urlpatterns =   [
     path('introductiontoPOI',views.introductiontoPOI,name='introductiontoPOI'),
     path('readexcel',views.readexcel,name='readexcel'),
     path('writeexcel',views.writeexcel,name='writeexcel'),
+    path('iframetestpage',views.iframetestpage,name='iframetestpage'),
   
 ]
