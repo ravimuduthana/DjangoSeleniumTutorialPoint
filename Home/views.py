@@ -1,5 +1,8 @@
 from django.shortcuts import render
 from django.http.response import HttpResponse
+
+
+
 from django.views.decorators.csrf import csrf_exempt
 # Create your views here.
 
@@ -54,3 +57,6 @@ def writeexcel(request):
         return render(request,"excelhandling.html",name)
 def iframetestpage(request):
         return render(request,"iframe.html")
+def workingwithframes(request):
+        name = {'sample_file': "workingwithframes.html",'sample_video': "https://www.youtube.com/embed/d8JZISxS0Mw" }
+        return render(request,"index.html",name)

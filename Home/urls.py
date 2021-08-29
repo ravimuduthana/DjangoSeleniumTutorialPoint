@@ -1,6 +1,8 @@
+from collections import UserList
 from django.urls import path
 from .import views
-
+from Home.api import UserList
+from Home.api import UserDetail
 urlpatterns =   [
 
     path('',views.index,name='index'),
@@ -23,5 +25,10 @@ urlpatterns =   [
     path('readexcel',views.readexcel,name='readexcel'),
     path('writeexcel',views.writeexcel,name='writeexcel'),
     path('iframetestpage',views.iframetestpage,name='iframetestpage'),
+    path('workingwithframes',views.workingwithframes,name='workingwithframes'),
+    path('apiget',UserList.as_view(),name='apiget'),
+    #path(r'^apiget/1/$',UserDetail.as_view(),name='apiget'),
+   
+    
   
 ]

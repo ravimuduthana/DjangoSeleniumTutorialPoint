@@ -28,6 +28,19 @@
           </ul>
         </div>
       </li> 
+      <li class="mb-1">
+        <button id="sidebar" class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="true">
+         API
+        </button>
+        <div class="collapse show" id="home-collapse">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            <li><a href="{% url 'apiget' %}" class="link-dark rounded">Get</a></li>
+            <li><a href="{% url 'apipost' %}" class="link-dark rounded">Post</a></li>
+            <li><a href="{% url 'apiupdate' %}" class="link-dark rounded">Update</a></li>
+            <li><a href="{% url 'apidelete' %}" class="link-dark rounded">Delete</a></li>
+          </ul>
+        </div>
+      </li> 
     </ul>
   </div>
 </div>
